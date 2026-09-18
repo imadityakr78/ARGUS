@@ -1,0 +1,74 @@
+{
+  "$defs": {
+    "TravelTimeStats": {
+      "properties": {
+        "medianSeconds": {
+          "title": "Medianseconds",
+          "type": "number"
+        },
+        "p10Seconds": {
+          "title": "P10Seconds",
+          "type": "number"
+        },
+        "p90Seconds": {
+          "title": "P90Seconds",
+          "type": "number"
+        },
+        "minimumSeconds": {
+          "title": "Minimumseconds",
+          "type": "number"
+        }
+      },
+      "required": [
+        "medianSeconds",
+        "p10Seconds",
+        "p90Seconds",
+        "minimumSeconds"
+      ],
+      "title": "TravelTimeStats",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "fromCameraId": {
+      "title": "Fromcameraid",
+      "type": "string"
+    },
+    "toCameraId": {
+      "title": "Tocameraid",
+      "type": "string"
+    },
+    "reachable": {
+      "title": "Reachable",
+      "type": "boolean"
+    },
+    "sampleCount": {
+      "title": "Samplecount",
+      "type": "integer"
+    },
+    "transitionProbability": {
+      "title": "Transitionprobability",
+      "type": "number"
+    },
+    "travelTime": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TravelTimeStats"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "fromCameraId",
+    "toCameraId",
+    "reachable",
+    "sampleCount",
+    "transitionProbability"
+  ],
+  "title": "CameraTransition",
+  "type": "object"
+}

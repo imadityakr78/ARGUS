@@ -1,0 +1,14 @@
+# CODEOWNERS
+# Replace @member1..@member4 with real GitHub usernames after team setup.
+
+vision/                     @member1
+intelligence/               @member2
+agent/                      @member3
+services/api/               @member3
+storage/                    @member3
+infra/aws/                  @member3
+apps/web/                   @member4
+
+# Shared — require team approval
+packages/contracts/         @member1 @member2 @member3 @member4
+mocks/                      @member1 @member2 @member3 @member4

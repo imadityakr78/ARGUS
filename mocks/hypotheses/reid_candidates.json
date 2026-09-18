@@ -1,0 +1,32 @@
+[
+  {
+    "sourceTrackId": "track_17",
+    "candidateTrackId": "track_18",
+    "appearanceSimilarity": 0.87,
+    "physicalConsistency": {
+      "status": "PASS",
+      "requiredTravelSeconds": 20.0,
+      "availableTravelSeconds": 53.0,
+      "distanceMeters": 18.0,
+      "reason": null
+    },
+    "transitionLikelihood": 0.74,
+    "directionScore": 0.8,
+    "finalScore": 0.84
+  },
+  {
+    "sourceTrackId": "track_17",
+    "candidateTrackId": "track_99",
+    "appearanceSimilarity": 0.91,
+    "physicalConsistency": {
+      "status": "FAIL",
+      "requiredTravelSeconds": 100.0,
+      "availableTravelSeconds": 16.0,
+      "distanceMeters": 140.0,
+      "reason": "The subject could not plausibly travel 140 metres in 16 seconds."
+    },
+    "transitionLikelihood": 0.01,
+    "directionScore": 0.5,
+    "finalScore": 0.1
+  }
+]

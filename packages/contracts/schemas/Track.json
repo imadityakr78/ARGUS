@@ -1,0 +1,58 @@
+{
+  "properties": {
+    "trackId": {
+      "title": "Trackid",
+      "type": "string"
+    },
+    "cameraId": {
+      "title": "Cameraid",
+      "type": "string"
+    },
+    "startTimestampMs": {
+      "title": "Starttimestampms",
+      "type": "integer"
+    },
+    "endTimestampMs": {
+      "title": "Endtimestampms",
+      "type": "integer"
+    },
+    "observationIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Observationids",
+      "type": "array"
+    },
+    "entityType": {
+      "title": "Entitytype",
+      "type": "string"
+    },
+    "appearanceEmbeddingRef": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Appearanceembeddingref"
+    },
+    "qualityScore": {
+      "title": "Qualityscore",
+      "type": "number"
+    }
+  },
+  "required": [
+    "trackId",
+    "cameraId",
+    "startTimestampMs",
+    "endTimestampMs",
+    "observationIds",
+    "entityType",
+    "qualityScore"
+  ],
+  "title": "Track",
+  "type": "object"
+}

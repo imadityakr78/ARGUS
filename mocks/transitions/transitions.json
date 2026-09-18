@@ -1,0 +1,41 @@
+[
+  {
+    "fromCameraId": "CAM_01",
+    "toCameraId": "CAM_02",
+    "reachable": true,
+    "sampleCount": 683,
+    "transitionProbability": 0.74,
+    "travelTime": {
+      "medianSeconds": 31.0,
+      "p10Seconds": 24.0,
+      "p90Seconds": 48.0,
+      "minimumSeconds": 20.0
+    }
+  },
+  {
+    "fromCameraId": "CAM_02",
+    "toCameraId": "CAM_03",
+    "reachable": true,
+    "sampleCount": 412,
+    "transitionProbability": 0.62,
+    "travelTime": {
+      "medianSeconds": 45.0,
+      "p10Seconds": 35.0,
+      "p90Seconds": 70.0,
+      "minimumSeconds": 28.0
+    }
+  },
+  {
+    "fromCameraId": "CAM_01",
+    "toCameraId": "CAM_04",
+    "reachable": true,
+    "sampleCount": 15,
+    "transitionProbability": 0.08,
+    "travelTime": {
+      "medianSeconds": 120.0,
+      "p10Seconds": 100.0,
+      "p90Seconds": 180.0,
+      "minimumSeconds": 100.0
+    }
+  }
+]

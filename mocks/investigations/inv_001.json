@@ -1,0 +1,166 @@
+{
+  "investigationId": "inv_001",
+  "summary": "Investigation into the missing laptop on Desk 4.",
+  "claims": [
+    {
+      "claimId": "claim_01",
+      "description": "A person approached Desk 4.",
+      "epistemicState": "OBSERVED",
+      "supportingEventIds": [
+        "evt_01"
+      ]
+    },
+    {
+      "claimId": "claim_02",
+      "description": "The laptop was not visible afterward.",
+      "epistemicState": "OBSERVED",
+      "supportingEventIds": [
+        "evt_02"
+      ]
+    },
+    {
+      "claimId": "claim_03",
+      "description": "A candidate trajectory connects CAM_01 and CAM_02.",
+      "epistemicState": "INFERRED",
+      "supportingEventIds": [
+        "evt_01",
+        "evt_03"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventId": "evt_01",
+      "type": "PERSON_APPROACHED_OBJECT",
+      "cameraId": "CAM_01",
+      "startTimestampMs": 1726659125000,
+      "endTimestampMs": 1726659132000,
+      "participants": [
+        {
+          "entityType": "person",
+          "entityId": "track_17"
+        },
+        {
+          "entityType": "object",
+          "entityId": "laptop_02"
+        }
+      ],
+      "supportingObservationIds": [
+        "obs_01",
+        "obs_02"
+      ],
+      "epistemicState": "OBSERVED",
+      "confidence": 0.92,
+      "description": "A person approached the desk containing Laptop_02."
+    },
+    {
+      "eventId": "evt_02",
+      "type": "OBJECT_DISAPPEARED",
+      "cameraId": "CAM_01",
+      "startTimestampMs": 1726659135000,
+      "endTimestampMs": 1726659145000,
+      "participants": [
+        {
+          "entityType": "object",
+          "entityId": "laptop_02"
+        }
+      ],
+      "supportingObservationIds": [
+        "obs_03"
+      ],
+      "epistemicState": "OBSERVED",
+      "confidence": 0.95,
+      "description": "The laptop was no longer visible."
+    },
+    {
+      "eventId": "evt_03",
+      "type": "PERSON_APPEARED",
+      "cameraId": "CAM_02",
+      "startTimestampMs": 1726659185000,
+      "endTimestampMs": 1726659200000,
+      "participants": [
+        {
+          "entityType": "person",
+          "entityId": "track_18"
+        }
+      ],
+      "supportingObservationIds": [
+        "obs_04"
+      ],
+      "epistemicState": "OBSERVED",
+      "confidence": 0.88,
+      "description": "A visually similar person appeared on CAM_02."
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesisId": "hyp_001",
+      "description": "The subject moved from CAM_01 to CAM_02 through the Corridor.",
+      "epistemicState": "INFERRED",
+      "score": 0.84,
+      "supportingEventIds": [
+        "evt_01",
+        "evt_03"
+      ],
+      "supportingObservationIds": [
+        "obs_01",
+        "obs_04"
+      ],
+      "route": [
+        "CAM_01",
+        "CORRIDOR",
+        "CAM_02"
+      ],
+      "checks": [
+        {
+          "type": "PHYSICAL_TIME",
+          "status": "PASS",
+          "reason": ""
+        },
+        {
+          "type": "REID",
+          "status": "PASS",
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "rejectedHypotheses": [
+    {
+      "hypothesisId": "hyp_002",
+      "description": "The subject moved from CAM_01 to CAM_04.",
+      "epistemicState": "REJECTED",
+      "score": 0.1,
+      "supportingEventIds": [
+        "evt_01"
+      ],
+      "supportingObservationIds": [
+        "obs_01"
+      ],
+      "route": [
+        "CAM_01",
+        "UNKNOWN",
+        "CAM_04"
+      ],
+      "checks": [
+        {
+          "type": "PHYSICAL_TIME",
+          "status": "FAIL",
+          "reason": "Impossible travel time (140m in 16s)"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "observedFraction": 0.68,
+    "inferredFraction": 0.16,
+    "unknownFraction": 0.16
+  },
+  "unknowns": [
+    "No camera covered the corridor section for 53 seconds."
+  ],
+  "evidence": [],
+  "warnings": [
+    "This is an evidence reconstruction, not a determination of guilt. Human review is required."
+  ]
+}

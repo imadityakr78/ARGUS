@@ -1,0 +1,102 @@
+{
+  "$defs": {
+    "EpistemicState": {
+      "enum": [
+        "OBSERVED",
+        "INFERRED",
+        "UNKNOWN",
+        "REJECTED"
+      ],
+      "title": "EpistemicState",
+      "type": "string"
+    },
+    "PaceCheck": {
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/PaceCheckStatus"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "status"
+      ],
+      "title": "PaceCheck",
+      "type": "object"
+    },
+    "PaceCheckStatus": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "title": "PaceCheckStatus",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "hypothesisId": {
+      "title": "Hypothesisid",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "epistemicState": {
+      "$ref": "#/$defs/EpistemicState"
+    },
+    "score": {
+      "title": "Score",
+      "type": "number"
+    },
+    "supportingEventIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supportingeventids",
+      "type": "array"
+    },
+    "supportingObservationIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supportingobservationids",
+      "type": "array"
+    },
+    "route": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Route",
+      "type": "array"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/PaceCheck"
+      },
+      "title": "Checks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "hypothesisId",
+    "description",
+    "epistemicState",
+    "score",
+    "supportingEventIds",
+    "supportingObservationIds",
+    "route",
+    "checks"
+  ],
+  "title": "Hypothesis",
+  "type": "object"
+}

@@ -1,0 +1,36 @@
+name: ARGUS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r services/api/requirements.txt
+      - name: Run Python tests
+        run: pytest
+        env:
+          ARGUS_USE_MOCKS: 'true'
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install frontend deps
+        run: npm install
+        working-directory: apps/web
+      - name: TypeScript check + build
+        run: npm run build
+        working-directory: apps/web

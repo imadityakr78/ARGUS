@@ -1,0 +1,63 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Model weights — NEVER commit
+*.weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.pb
+*.tflite
+*.safetensors
+
+# Media — NEVER commit
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# Large local assets
+.local/
+models/
+demo-data/videos/
+embeddings/
+
+# Logs
+logs/
+*.log

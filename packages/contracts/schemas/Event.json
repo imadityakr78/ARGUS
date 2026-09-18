@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "EpistemicState": {
+      "enum": [
+        "OBSERVED",
+        "INFERRED",
+        "UNKNOWN",
+        "REJECTED"
+      ],
+      "title": "EpistemicState",
+      "type": "string"
+    },
+    "Participant": {
+      "properties": {
+        "entityType": {
+          "title": "Entitytype",
+          "type": "string"
+        },
+        "entityId": {
+          "title": "Entityid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entityType",
+        "entityId"
+      ],
+      "title": "Participant",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "eventId": {
+      "title": "Eventid",
+      "type": "string"
+    },
+    "type": {
+      "title": "Type",
+      "type": "string"
+    },
+    "cameraId": {
+      "title": "Cameraid",
+      "type": "string"
+    },
+    "startTimestampMs": {
+      "title": "Starttimestampms",
+      "type": "integer"
+    },
+    "endTimestampMs": {
+      "title": "Endtimestampms",
+      "type": "integer"
+    },
+    "participants": {
+      "items": {
+        "$ref": "#/$defs/Participant"
+      },
+      "title": "Participants",
+      "type": "array"
+    },
+    "supportingObservationIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supportingobservationids",
+      "type": "array"
+    },
+    "epistemicState": {
+      "$ref": "#/$defs/EpistemicState"
+    },
+    "confidence": {
+      "title": "Confidence",
+      "type": "number"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    }
+  },
+  "required": [
+    "eventId",
+    "type",
+    "cameraId",
+    "startTimestampMs",
+    "endTimestampMs",
+    "participants",
+    "supportingObservationIds",
+    "epistemicState",
+    "confidence",
+    "description"
+  ],
+  "title": "Event",
+  "type": "object"
+}

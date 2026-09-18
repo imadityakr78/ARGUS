@@ -1,0 +1,143 @@
+{
+  "$defs": {
+    "BoundingBox": {
+      "properties": {
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "title": "BoundingBox",
+      "type": "object"
+    },
+    "EpistemicState": {
+      "enum": [
+        "OBSERVED",
+        "INFERRED",
+        "UNKNOWN",
+        "REJECTED"
+      ],
+      "title": "EpistemicState",
+      "type": "string"
+    },
+    "VideoSource": {
+      "properties": {
+        "videoId": {
+          "title": "Videoid",
+          "type": "string"
+        },
+        "clipStartMs": {
+          "title": "Clipstartms",
+          "type": "integer"
+        },
+        "clipEndMs": {
+          "title": "Clipendms",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "videoId",
+        "clipStartMs",
+        "clipEndMs"
+      ],
+      "title": "VideoSource",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "observationId": {
+      "title": "Observationid",
+      "type": "string"
+    },
+    "cameraId": {
+      "title": "Cameraid",
+      "type": "string"
+    },
+    "timestampMs": {
+      "title": "Timestampms",
+      "type": "integer"
+    },
+    "frameId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Frameid"
+    },
+    "entityType": {
+      "title": "Entitytype",
+      "type": "string"
+    },
+    "localTrackId": {
+      "title": "Localtrackid",
+      "type": "string"
+    },
+    "bbox": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BoundingBox"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "confidence": {
+      "title": "Confidence",
+      "type": "number"
+    },
+    "epistemicState": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/EpistemicState"
+        }
+      ],
+      "default": "OBSERVED"
+    },
+    "source": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VideoSource"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "observationId",
+    "cameraId",
+    "timestampMs",
+    "entityType",
+    "localTrackId",
+    "confidence"
+  ],
+  "title": "Observation",
+  "type": "object"
+}

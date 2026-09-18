@@ -1,0 +1,50 @@
+[
+  {
+    "cameraId": "CAM_01",
+    "name": "Library Desk Area",
+    "zone": "Library",
+    "floor": 1,
+    "position": {
+      "x": 12.4,
+      "y": 8.1,
+      "z": 3.2
+    },
+    "metadata": {}
+  },
+  {
+    "cameraId": "CAM_02",
+    "name": "Corridor",
+    "zone": "Hallway",
+    "floor": 1,
+    "position": {
+      "x": 30.0,
+      "y": 8.0,
+      "z": 3.0
+    },
+    "metadata": {}
+  },
+  {
+    "cameraId": "CAM_03",
+    "name": "Exit",
+    "zone": "Lobby",
+    "floor": 1,
+    "position": {
+      "x": 50.0,
+      "y": 10.0,
+      "z": 3.0
+    },
+    "metadata": {}
+  },
+  {
+    "cameraId": "CAM_04",
+    "name": "South Annex",
+    "zone": "Annex",
+    "floor": 1,
+    "position": {
+      "x": 150.0,
+      "y": 10.0,
+      "z": 3.0
+    },
+    "metadata": {}
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "eventId": "evt_01",
+    "type": "PERSON_APPROACHED_OBJECT",
+    "cameraId": "CAM_01",
+    "startTimestampMs": 1726659125000,
+    "endTimestampMs": 1726659132000,
+    "participants": [
+      {
+        "entityType": "person",
+        "entityId": "track_17"
+      },
+      {
+        "entityType": "object",
+        "entityId": "laptop_02"
+      }
+    ],
+    "supportingObservationIds": [
+      "obs_01",
+      "obs_02"
+    ],
+    "epistemicState": "OBSERVED",
+    "confidence": 0.92,
+    "description": "A person approached the desk containing Laptop_02."
+  },
+  {
+    "eventId": "evt_02",
+    "type": "OBJECT_DISAPPEARED",
+    "cameraId": "CAM_01",
+    "startTimestampMs": 1726659135000,
+    "endTimestampMs": 1726659145000,
+    "participants": [
+      {
+        "entityType": "object",
+        "entityId": "laptop_02"
+      }
+    ],
+    "supportingObservationIds": [
+      "obs_03"
+    ],
+    "epistemicState": "OBSERVED",
+    "confidence": 0.95,
+    "description": "The laptop was no longer visible."
+  },
+  {
+    "eventId": "evt_03",
+    "type": "PERSON_APPEARED",
+    "cameraId": "CAM_02",
+    "startTimestampMs": 1726659185000,
+    "endTimestampMs": 1726659200000,
+    "participants": [
+      {
+        "entityType": "person",
+        "entityId": "track_18"
+      }
+    ],
+    "supportingObservationIds": [
+      "obs_04"
+    ],
+    "epistemicState": "OBSERVED",
+    "confidence": 0.88,
+    "description": "A visually similar person appeared on CAM_02."
+  }
+]

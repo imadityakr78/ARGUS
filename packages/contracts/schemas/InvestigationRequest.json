@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "question": {
+      "title": "Question",
+      "type": "string"
+    },
+    "cameraIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Cameraids",
+      "type": "array"
+    },
+    "fromTimestampMs": {
+      "title": "Fromtimestampms",
+      "type": "integer"
+    },
+    "toTimestampMs": {
+      "title": "Totimestampms",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "question",
+    "cameraIds",
+    "fromTimestampMs",
+    "toTimestampMs"
+  ],
+  "title": "InvestigationRequest",
+  "type": "object"
+}

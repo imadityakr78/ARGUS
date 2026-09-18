@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "PaceCheckStatus": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "title": "PaceCheckStatus",
+      "type": "string"
+    },
+    "PhysicalConsistency": {
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/PaceCheckStatus"
+        },
+        "requiredTravelSeconds": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requiredtravelseconds"
+        },
+        "availableTravelSeconds": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Availabletravelseconds"
+        },
+        "distanceMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Distancemeters"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "PhysicalConsistency",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "sourceTrackId": {
+      "title": "Sourcetrackid",
+      "type": "string"
+    },
+    "candidateTrackId": {
+      "title": "Candidatetrackid",
+      "type": "string"
+    },
+    "appearanceSimilarity": {
+      "title": "Appearancesimilarity",
+      "type": "number"
+    },
+    "physicalConsistency": {
+      "$ref": "#/$defs/PhysicalConsistency"
+    },
+    "transitionLikelihood": {
+      "title": "Transitionlikelihood",
+      "type": "number"
+    },
+    "directionScore": {
+      "title": "Directionscore",
+      "type": "number"
+    },
+    "finalScore": {
+      "title": "Finalscore",
+      "type": "number"
+    }
+  },
+  "required": [
+    "sourceTrackId",
+    "candidateTrackId",
+    "appearanceSimilarity",
+    "physicalConsistency",
+    "transitionLikelihood",
+    "directionScore",
+    "finalScore"
+  ],
+  "title": "ReIdCandidate",
+  "type": "object"
+}
