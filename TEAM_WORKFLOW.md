@@ -22,6 +22,26 @@ ARGUS is built by a four-person team operating in parallel using mocks.
 | `apps/web/` | Member 4 | React frontend |
 | `packages/contracts/`, `mocks/` | **TEAM** | Requires team approval |
 
+## Cross-Member Ownership Boundaries
+
+Explicitly state:
+
+**MEMBER 1:**
+Answers: "What did the cameras detect?"
+Produces: `Observation`, `Track`, visual `ReIdCandidate`, `Event`
+
+**MEMBER 2:**
+Answers: "What does the physical/spatio-temporal evidence support?"
+Produces: `CameraGraph`, `MobilityGraph`, `EventGraph`, PACE results, `Hypothesis[]`, `EvidenceCoverage`
+
+**MEMBER 3:**
+Answers: "How do we investigate and explain the evidence safely?"
+Produces: `InvestigationResponse`, verified claims, API, storage, AWS deployment
+
+**MEMBER 4:**
+Answers: "How does the user understand and interact with the investigation?"
+Produces: UI, visualizations, question workflow, real API frontend integration
+
 ## Files Requiring Team Approval
 
 - `packages/contracts/python/argus_contracts/*.py` — Canonical data models

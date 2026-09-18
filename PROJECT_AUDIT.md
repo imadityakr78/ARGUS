@@ -61,8 +61,8 @@ Deliver a frozen skeleton repository with canonical contracts, mock data, typed 
 
 ### Member 1 (Vision)
 - **Has**: Adapter protocols (`DetectorAdapter`, `TrackerAdapter`, `ReIdAdapter`) + mock implementations
-- **Must build first**: M1-001 — Real `DetectorAdapter` implementation (YOLO or RT-DETR)
-- **Key output**: `Observation[]`, `Track[]`, `ReIdCandidate[]`, `Event[]`
+- **Must build first**: M1-005 — Video Ingestion, then M1-001 — Real `DetectorAdapter`
+- **Key output**: `Observation[]`, `Track[]`, `ReIdCandidate[]`, `Event[]` from M1-006 (End-to-End Runner)
 
 ### Member 2 (Intelligence)
 - **Has**: PACE `check_travel_time` (real, tested), typed interfaces for all graphs, 5 PACE stubs
@@ -72,12 +72,12 @@ Deliver a frozen skeleton repository with canonical contracts, mock data, typed 
 ### Member 3 (Agent/Backend)
 - **Has**: FastAPI mock server (10 routes, 9 tests), LLM/Investigator/Verifier interfaces, FakeLLMClient
 - **Must build first**: M3-002 — Agent tool functions (using mocks)
-- **Key output**: Real `InvestigationResponse` from orchestration loop
+- **Key output**: Real `InvestigationResponse` from orchestration loop, AWS deployment (M3-007)
 
 ### Member 4 (Frontend)
 - **Has**: React dashboard with service layer, typed data, epistemic styling, mock fallback
-- **Must build first**: M4-001 — VideoPlayer, M4-004 — EventTimeline
-- **Key output**: Complete interactive investigation UI
+- **Must build first**: M4-001 — VideoPlayer or M4-004 — EventTimeline
+- **Key output**: Complete interactive investigation UI, InvestigationQuery (M4-011), Trajectory View (M4-012), Real API wiring (M4-013)
 
 ## Current Tests (All Passing)
 
